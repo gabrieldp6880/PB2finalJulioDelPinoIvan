@@ -31,10 +31,12 @@ public class testCentro {
 		Paciente p1 = new Paciente ("Ivan Del Pino", 1234);
 		Vacuna v1 = new Vacuna ("Rubeola");
 		Vacuna v2 = new Vacuna ("Hepatitis A");
+		Vacuna v3 = new Vacuna ("Hepatitis B");
 		Centro c1 = new Centro ("Club Flecha");
 		
 		c1.vacunarPaciente(p1, v1);
 		c1.vacunarPaciente(p1, v2);
+		c1.vacunarPaciente(p1, v3);
 		
 	}
 	
