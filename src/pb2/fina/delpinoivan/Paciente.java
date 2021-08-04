@@ -116,8 +116,12 @@ public class Paciente implements Comparable <Paciente> {
 
 	@Override
 	public int compareTo(Paciente o) {
-		// TODO Auto-generated method stub
-		return this.dni.compareTo(o.getDni());
+		int c;
+		c = this.dni.compareTo(o.getDni());
+		if(c==0) {
+			c = this.getNomyape().compareTo(o.getNomyape());
+		}
+		return c;
 	}
 	
 	

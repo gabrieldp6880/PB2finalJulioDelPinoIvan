@@ -77,6 +77,7 @@ public class testCentro {
 	public void queTengaPacientesOrdenados () {
 		Paciente p1 = new Paciente ("Ivan Del Pino", 4524);
 		Paciente p2 = new Paciente ("Gabriel Del Pino", 1123);
+		Paciente p3 = new Paciente ("Beatriz Del Pino", 4524);
 		Vacuna v1 = new Vacuna ("Rubeola");
 		Vacuna v2 = new Vacuna ("Hepatitis A");
 		Centro c1 = new Centro ("Club Flecha");
@@ -105,6 +106,19 @@ public class testCentro {
 		
 		c1.agregarListaPacientesVacunados(p2);
 		
+		
+		try {
+			c1.vacunarPaciente(p3, v1);
+		} catch (NoMoreVaccineException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoCovidVaccineException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		c1.agregarListaPacientesVacunados(p3);
+		
 		Integer i = 0;
 
 		Iterator<Paciente> it = c1.getPacientesVacunados().iterator();
@@ -119,7 +133,7 @@ public class testCentro {
 				i++;
 				break;
 			case 1:
-				String esperado2 = "Ivan Del Pino";
+				String esperado2 = "Beatriz Del Pino";
 				String real2 = l.getNomyape();
 				assertEquals(esperado2, real2);
 				i++;
