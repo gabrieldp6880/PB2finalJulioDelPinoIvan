@@ -7,7 +7,7 @@ public class Centro {
 	private String nombreCentro;
 	private TreeSet <Paciente> pacientesVacunados;
 	
-	public Centro(String nombreCentro, TreeSet<Paciente> pacientesVacunados) {
+	public Centro(String nombreCentro) {
 		this.nombreCentro = nombreCentro;
 		this.pacientesVacunados = new TreeSet <> ();
 	}
@@ -21,7 +21,7 @@ public class Centro {
 		Integer cantidad = obtenerCantidadDeVacunasDelPaciente(p);
 		
 		if(cantidad <= 2) {
-			if(p.vacunadoContrCovid()==false) {
+			if(p.vacunadoContrCovid()==false && cantidad == 2) {
 				throw new NoMoreVaccineException();
 			}
 			
@@ -59,6 +59,8 @@ public class Centro {
 			
 		}
 		return false;
+		
+		
 	}
 	
 	public void agregarListaPacientesVacunados (Paciente p) {
@@ -67,5 +69,23 @@ public class Centro {
 			this.pacientesVacunados.add(p);
 		}
 	}
+
+	public String getNombreCentro() {
+		return nombreCentro;
+	}
+
+	public void setNombreCentro(String nombreCentro) {
+		this.nombreCentro = nombreCentro;
+	}
+
+	public TreeSet<Paciente> getPacientesVacunados() {
+		return pacientesVacunados;
+	}
+
+	public void setPacientesVacunados(TreeSet<Paciente> pacientesVacunados) {
+		this.pacientesVacunados = pacientesVacunados;
+	}
+	
+	
 	
 }

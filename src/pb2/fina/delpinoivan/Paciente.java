@@ -12,7 +12,7 @@ public class Paciente implements Comparable <Paciente> {
 	private Boolean covid1era = false;
 	
 	
-	public Paciente(String nomyape, Integer dni, Vacuna vacunasDelPaciente) {
+	public Paciente(String nomyape, Integer dni) {
 		this.nomyape = nomyape;
 		this.dni = dni;
 		this.vacunasDelPaciente = new HashSet <Vacuna>();
